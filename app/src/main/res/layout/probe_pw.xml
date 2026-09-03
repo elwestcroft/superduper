@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Probe layout for SPEC.md §2.2 / risk #1.
+
+  android.view.OwnerSurfaceView lives in /system/framework/htfyview.jar, which is on the
+  device BOOTCLASSPATH, so the class is present in every app process. All of its methods
+  are hiddenapi-flagged "sdk" (callable), but every constructor is flagged BLOCKED.
+
+  Inflating it from XML routes construction through LayoutInflater.createView, i.e. the
+  reflective newInstance call is made by framework code rather than by app code. Android's
+  hidden-API enforcement is evaluated against the *calling* domain, so a bootclasspath
+  caller is unrestricted — which is why this may succeed where a direct constructor call
+  from our dex is denied. That is the hypothesis this layout exists to test.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.view.OwnerSurfaceView
+        android:id="@+id/pw_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</FrameLayout>

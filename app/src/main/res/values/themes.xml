@@ -1,0 +1,10 @@
+<resources>
+    <!-- E-ink theme: pure white ground, no action bar, and — critically — every window
+         animation disabled (animations are the enemy of an EPD; SPEC.md §4.4). -->
+    <style name="Theme.SuperDuper" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:statusBarColor">@android:color/white</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="android:windowDisablePreview">true</item>
+    </style>
+</resources>

@@ -1,0 +1,13 @@
+# Versions verified against official release pages on 2026-08-26 (see SPEC.md §3)
+[versions]
+agp = "9.3.0"
+coreKtx = "1.19.0"
+appcompat = "1.8.0"
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+
+[libraries]
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+

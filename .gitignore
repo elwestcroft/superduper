@@ -1,0 +1,20 @@
+*.iml
+.gradle/
+/local.properties
+/.idea/
+.DS_Store
+/build
+/app/build
+/captures
+.externalNativeBuild
+.cxx
+*.apk
+!gradle/wrapper/gradle-wrapper.jar
+
+# Decompiled vendor firmware reference (not ours to commit)
+refs/
+
+# Release signing — never commit a keystore or its passwords
+keystore.properties
+*.jks
+*.keystore
